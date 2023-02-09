@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Front-end') {
       agent {
-        docker { image 'ansible:ubuntu1404' }
+        docker { image 'alpine/ansible:latest' }
       }
       steps {
         sh 'ansible --version'
