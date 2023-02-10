@@ -1,17 +1,13 @@
 pipeline {
-  agent any
+  agent { label 'slave' }
+  environment {
+   
+  }
   stages {
-    stage('Back-end') {
+    stage('Hello') {
       steps {
-        sh 'echo $USER'
-      }
-    }
-    stage('Front-end') {
-      agent {
-        docker { image 'alpine/ansible:latest' }
-      }
-      steps {
-        sh 'ansible --version'
+        sh 'ansible-galaxy --version'
+        
       }
     }
   }
